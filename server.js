@@ -1,8 +1,7 @@
 const express = require('express');
 const app = express();
 const path = require('path');
-const PORT = 8080;
-const HOST = '0.0.0.0';
+var port_number = server.listen(process.env.PORT || 3000);
 
 app.use(express.static(__dirname + '/public'));
 
@@ -31,5 +30,4 @@ app.get('/about.html', function (req, res) {
     res.sendFile(path.join(__dirname + '/shop.html'));
  })
 
-app.listen(PORT, HOST);
-console.log(`Running on http://${HOST}:${PORT}`);
+app.listen(port_number);
